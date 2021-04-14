@@ -6,12 +6,21 @@ name: Android app build CI
 on: 
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'     
+    
+      flavor:
+        description: 'Flavor(staging,alpha,production)'     
         required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags' 
+#        default: 'Staging'
+        
+      artifacts:
+        description: 'Artifacts(assemble,bubdle)'
+        required: true
+#        default: assemble
+
+      build:
+        description: 'Build(debug,release)'
+        required: true
+        
 
 jobs:
   build:
